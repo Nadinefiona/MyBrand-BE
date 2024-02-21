@@ -1,6 +1,6 @@
 import express ,{Express, Request, Response} from 'express';
-import CustomResponse from './utils/response';
-import router from './routes/routes.js';
+import CustomResponse  from './utils/response';
+import router  from './routes/routes';
 import dotenv from 'dotenv';
 
 
@@ -20,7 +20,7 @@ app.get('/api/*', (req: Request, res: Response) => {
 });
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 
 app.listen(port, () => {

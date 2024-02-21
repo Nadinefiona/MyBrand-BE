@@ -3,17 +3,17 @@ import { BlogController } from '../controllers/BlogController';
 import { CommentController } from '../controllers/CommentController';
 import { LikeController } from '../controllers/LikeController';
 import { MessageController } from '../controllers/MessageController';
-
+import { AuthController } from '../controllers/authController';
 
 const route: IRouter = express.Router();
 
 //blog
 
-route.get('/blogs', new BlogController().GetAllBlogs);
-route.post('/blogs', new BlogController().CreateBlog);
-route.post('/blogs/:id', new BlogController().getBlogById);
-route.post('/blogs/:id', new BlogController().updateBlog);
-route.post('/blogs/:id', new BlogController().deleteBlog);
+route.get('/blogs', new BlogController().getAllBlogs);
+route.post('/blogs', new BlogController().createBlog);
+route.get('/blogs/:id', new BlogController().getBlogById);
+route.patch('/blogs/:id', new BlogController().updateBlog);
+route.delete('/blogs/:id', new BlogController().deleteBlog);
 
 //comment
 
@@ -33,8 +33,15 @@ route.delete('/blogs/:blogId/likes/:likeId', new LikeController().deleteLikeForB
 route.get('/messages', new MessageController().getAllMessages);
 route.get('/messages/:id', new MessageController().getMessageById);
 route.post('/messages', new MessageController().createMessage);
-route.put('/messages/:id', new MessageController().updateMessage);
+route.patch('/messages/:id', new MessageController().updateMessage);
 route.delete('/messages/:id', new MessageController().deleteMessage);
+
+
+//Signup/signin using jwt
+
+route.post('/signup', new AuthController().signup);
+route.post('/signin', new AuthController().signin);
+
 
 
 export default route;

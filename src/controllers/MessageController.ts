@@ -1,9 +1,12 @@
 import { Request, Response } from 'express';
 import CustomResponse from '../utils/response';
 import * as MessageModel from '../models/message';
+import { validateMessage } from '../utils/messageValidation';
 
 interface IRequestMessage extends Request {
   body: {
+    name: string;
+    email: string;
     text: string;
   };
 }
@@ -39,12 +42,13 @@ class MessageController {
   public async createMessage(req: IRequestMessage, res: Response) {
     const response = new CustomResponse(req, res);
     try {
-      const text = req.body.text;
-      if (text) {
-        const newMessage = MessageModel.createMessage(text);
+      const { name, email ,text } = req.body;
+      const validationResult = validateMessage({ name, email, text });
+      if (!validationResult.error) {
+        const newMessage = MessageModel.createMessage({ name, email,text, createdAt: new Date() });
         response.send<typeof newMessage>(newMessage, 'Message Created Successfully', 201);
       } else {
-        response.send(null, 'Text is required', 400);
+        response.send(null, validationResult.error.message, 400);
       }
     } catch (error) {
       const errorMessage = error as string;
