@@ -17,15 +17,14 @@ route.delete('/blogs/:id', new BlogController().deleteBlog);
 
 //comment
 
-route.post('/comment', new CommentController().postComment );
-route.get('/comments/:blogId', new CommentController().getAllComments);
-route.put('/comment/:commentId/hide', new CommentController().hideComment);
+route.post('/blogs/:blogId/comments', new CommentController().postComment );
+route.get('/blogs/:id/comments', new CommentController().getAllComments);
+route.put('/blogs/:id/comments/:commentId', new CommentController().hideComment);
 
 //like
 
-route.post('/like', new LikeController().likeBlog);
-route.get('/likes/:blogId', new LikeController().getAllLikesForBlog);
-route.delete('/blogs/:blogId/likes/:likeId', new LikeController().deleteLikeForBlog);
+route.post('/blogs/:id/like', new LikeController().likeBlog);
+route.delete('/blogs/:id/likes', new LikeController().deleteLikeForBlog);
 
 
 //message
@@ -45,3 +44,5 @@ route.post('/signin', new AuthController().signin);
 
 
 export default route;
+
+

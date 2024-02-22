@@ -1,13 +1,23 @@
 import { Request, Response } from 'express';
 import Comment, { IComment } from '../models/comment';
+import Joi from 'joi';
+import { commentValidation } from '../utils/commentValidation';
 
 class CommentController {
     public async postComment(req: Request, res: Response){
         try {
-            const { blogId, text } = req.body;
+            // Validate request body
+            const { error } = commentValidation.validate(req.body);
+            if (error) {
+                return res.status(400).json({ error: error.details[0].message });
+            }
+
+            const { blogId, name, email, comment } = req.body;
             const newComment: IComment = new Comment({ 
                 blogId: blogId as string, 
-                text: text as string 
+                name: name as string,
+                email: email as string,
+                comment: comment as string 
             });
             const savedComment = await newComment.save();
             res.status(201).json({

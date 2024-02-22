@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import Blog from '../models/Blog';
 import { IBlog } from '../types/BlogType';
 import { blogValidationSchema } from '../utils/blogValidation';
-import cloudinary from '../helper/cloudinary';
+import UploadToCloud from "../helper/cloudinary";
 
 
 interface IRequestBlog extends Request {
@@ -27,16 +27,20 @@ class BlogController {
     const response = new CustomResponse(req, res);
     try {
       const { error } = blogValidationSchema.validate(req.body);
+     
+  
       if (error) {
         return res.status(400).send({ error: error.details[0].message });
       }
 
-      if (!req.file) { // Check if req.file is undefined
+      if (!req.file) {
+        // Check if req.file is undefined
         return res.status(400).send({ error: "File not uploaded" });
       }
 
       const { title, content } = req.body;
-      const result = await cloudinary.uploader.upload(req.file.path);
+      const result = await UploadToCloud(req.file,res);
+     
       const blog = new Blog({
         title,
         content,
@@ -44,7 +48,7 @@ class BlogController {
         date: new Date(),
       });
       const savedBlog = await blog.save();
-      response.send<typeof savedBlog>(
+     response.send<typeof savedBlog>(
         savedBlog,
         'Blog Created Successfully',
         201,
@@ -86,16 +90,19 @@ class BlogController {
   public async deleteBlog(req: Request, res: Response) {
     const response = new CustomResponse(req, res);
     try {
-      const blog = await Blog.findByIdAndDelete(req.params.id);
+      const blogId = req.params.id.trim(); 
+      const blog = await Blog.findByIdAndDelete(blogId);
       if (!blog) {
         return res.status(404).send({ error: "Blog not found" });
       }
-      res.status(204).send();
+      const successMessage = { message: "Blog deleted successfully" };
+      res.status(204).send(successMessage);
     } catch (error) {
       const errorMessage = error as string;
       response.send(null, errorMessage as string, 500);
     }
   }
+  
 }
 
 export { BlogController };
