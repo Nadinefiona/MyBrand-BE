@@ -8,7 +8,7 @@ const databaseConnection = async () => {
     const uri = process.env.MONGODB_URI || '';
     const dbUrl = uri.replace('<password>', password);
     
-    await mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }); // Include { useNewUrlParser: true, useUnifiedTopology: true } options here
+    await mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true ,useCreateIndex: true }); 
     console.log('Database connected');
   } catch (err) {
     console.error('Error connecting to database:', err);

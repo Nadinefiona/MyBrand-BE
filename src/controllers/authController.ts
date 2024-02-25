@@ -6,7 +6,7 @@ import { signinValidation, signupValidation } from '../utils/authValidation';
 
 
 const saltRounds = 10;
-const jwtSecret = 'your_secret_key';
+
 
 class AuthController {
     public async signup(req: Request, res: Response) {
@@ -46,9 +46,15 @@ class AuthController {
                 return res.status(401).json({ message: 'Invalid credentials' });
             }
 
-            const token = jwt.sign({ email: user.email }, jwtSecret);
+            if (!process.env.JWT_SECRET) {
+                throw new Error('JWT secret is not defined');
+            }
+
+            const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET);
+          
             res.json({ token });
         } catch (error) {
+            console.error(error);
             res.status(500).json({ message: 'Internal server error' });
         }
     }

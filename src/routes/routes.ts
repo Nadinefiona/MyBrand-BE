@@ -4,33 +4,36 @@ import { CommentController } from '../controllers/CommentController';
 import { LikeController } from '../controllers/LikeController';
 import { MessageController } from '../controllers/MessageController';
 import { AuthController } from '../controllers/authController';
+import isAuthenticated from '../Middleware/isAuthenticated';
 
 const route: IRouter = express.Router();
 
 //blog
 
 route.get('/blogs', new BlogController().getAllBlogs);
-route.post('/blogs', new BlogController().createBlog);
+route.post('/blogs',isAuthenticated ,new BlogController().createBlog);
 route.get('/blogs/:id', new BlogController().getBlogById);
-route.patch('/blogs/:id', new BlogController().updateBlog);
-route.delete('/blogs/:id', new BlogController().deleteBlog);
+route.patch('/blogs/:id', isAuthenticated ,new BlogController().updateBlog);
+route.delete('/blogs/:id', isAuthenticated ,new BlogController().deleteBlog);
 
 //comment
 
-route.post('/blogs/:blogId/comments', new CommentController().postComment );
+route.post('/blogs/:id/comments', new CommentController().postComment );
 route.get('/blogs/:id/comments', new CommentController().getAllComments);
-route.put('/blogs/:id/comments/:commentId', new CommentController().hideComment);
+route.put('/blogs/:id/comments/:commentId', isAuthenticated ,new CommentController().hideComment);
+
 
 //like
 
 route.post('/blogs/:id/like', new LikeController().likeBlog);
-route.delete('/blogs/:id/likes', new LikeController().deleteLikeForBlog);
+route.delete('/blogs/:id/unlike', new LikeController().deleteLikeForBlog);
+route.get('/blogs/:id/likes', new LikeController().getAllLikesForBlog);
 
 
 //message
 
-route.get('/messages', new MessageController().getAllMessages);
-route.get('/messages/:id', new MessageController().getMessageById);
+route.get('/messages', isAuthenticated ,new MessageController().getAllMessages);
+route.get('/messages/:id', isAuthenticated ,new MessageController().getMessageById);
 route.post('/messages', new MessageController().createMessage);
 route.patch('/messages/:id', new MessageController().updateMessage);
 route.delete('/messages/:id', new MessageController().deleteMessage);

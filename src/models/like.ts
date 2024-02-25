@@ -1,13 +1,19 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
 export interface ILike extends Document {
   blogId: string;
-  userId: string;
+}
+
+interface ILikeModel extends Model<ILike> {
+  incrementLikeCount(blogId: string): Promise<void>;
 }
 
 const LikeSchema: Schema = new Schema({
-  blogId: { type: Schema.Types.ObjectId, ref: 'Blog', required: true },
-  userId: { type: String, required: true } 
+  blogId: { type: Schema.Types.ObjectId, ref: 'Blog', required: true }
 });
 
-export default mongoose.model<ILike>('Like', LikeSchema);
+LikeSchema.statics.incrementLikeCount = async function(blogId: string): Promise<void> {
+  await this.create({ blogId }); 
+};
+
+export default mongoose.model<ILike, ILikeModel>('Like', LikeSchema);

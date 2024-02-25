@@ -15,6 +15,7 @@ class BlogController {
   public async getAllBlogs(req: Request, res: Response) {
     const response = new CustomResponse(req, res);
     try {
+
       const blogs = await Blog.find();
       response.send<typeof blogs>(blogs, 'Blogs Fetched Successfully', 200);
     } catch (error) {
@@ -34,7 +35,6 @@ class BlogController {
       }
 
       if (!req.file) {
-        // Check if req.file is undefined
         return res.status(400).send({ error: "File not uploaded" });
       }
 

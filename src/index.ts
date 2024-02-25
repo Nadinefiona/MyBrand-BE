@@ -4,6 +4,8 @@ import router  from './routes/routes';
 import dotenv from 'dotenv';
 import upload from './helper/multer';
 
+
+
 dotenv.config();
 
 import databaseConnection from './config/db';
@@ -15,10 +17,6 @@ app.use(express.json());
 app.use(upload.single('image'))
 app.use('/api', router);
 
-app.get('/api/*', (req: Request, res: Response) => {
-  const response = new CustomResponse(req, res);
-  response.send(null, 'API Not Found', 404);
-});
 
 
 const port = process.env.PORT || 3000;
