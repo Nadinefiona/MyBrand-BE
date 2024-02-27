@@ -8,6 +8,8 @@ import isAuthenticated from '../Middleware/isAuthenticated';
 
 const route: IRouter = express.Router();
 
+
+
 //blog
 
 route.get('/blogs', new BlogController().getAllBlogs);

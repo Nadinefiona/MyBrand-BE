@@ -3,7 +3,7 @@ import CustomResponse  from './utils/response';
 import router  from './routes/routes';
 import dotenv from 'dotenv';
 import upload from './helper/multer';
-
+import { swaggerUiMiddleware, swaggerUiSetup } from './swagger';
 
 
 dotenv.config();
@@ -12,6 +12,9 @@ import databaseConnection from './config/db';
 const app: Express = express();
 
 databaseConnection();
+
+app.use('/api-docs', swaggerUiMiddleware, swaggerUiSetup);
+
 
 app.use(express.json());
 app.use(upload.single('image'))

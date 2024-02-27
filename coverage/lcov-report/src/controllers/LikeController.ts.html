@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.76% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.76% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -104,29 +104,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -139,30 +139,30 @@
 import Like, { ILike } from '../models/like';
 &nbsp;
 class LikeController {
-  public async <span class="fstat-no" title="function not covered" >likeBlog(</span>req: Request, res: Response): Promise&lt;void&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const { id } = <span class="cstat-no" title="statement not covered" >req.params;</span>
-<span class="cstat-no" title="statement not covered" >      await Like.incrementLikeCount(id);</span>
+  public async likeBlog(req: Request, res: Response): Promise&lt;void&gt; {
+    try {
+      const { id } = req.params;
+      await Like.incrementLikeCount(id);
 <span class="cstat-no" title="statement not covered" >      res.status(201).json({ message: 'Blog liked successfully' });</span>
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      res.status(500).json({ error: 'Error liking blog' });</span>
+      res.status(500).json({ error: 'Error liking blog' });
     }
   }
   
-  public async <span class="fstat-no" title="function not covered" >deleteLikeForBlog(</span>req: Request, res: Response): Promise&lt;void&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const { id } = <span class="cstat-no" title="statement not covered" >req.params;</span>
-<span class="cstat-no" title="statement not covered" >      await Like.deleteMany({ blogId: id });</span>
+  public async deleteLikeForBlog(req: Request, res: Response): Promise&lt;void&gt; {
+    try {
+      const { id } = req.params;
+      await Like.deleteMany({ blogId: id });
 <span class="cstat-no" title="statement not covered" >      res.status(200).json({ message: 'like removed successfully' });</span>
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      res.status(500).json({ error: 'Error deleting like for blog' });</span>
+      res.status(500).json({ error: 'Error deleting like for blog' });
     }
   }
 &nbsp;
-  public async <span class="fstat-no" title="function not covered" >getAllLikesForBlog(</span>req: Request, res: Response): Promise&lt;void&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const { id } = <span class="cstat-no" title="statement not covered" >req.params;</span>
-      const likeCount: number = <span class="cstat-no" title="statement not covered" >await Like.countDocuments({ blogId: id });</span>
+  public async getAllLikesForBlog(req: Request, res: Response): Promise&lt;void&gt; {
+    try {
+      const { id } = req.params;
+      const likeCount: number = await Like.countDocuments({ blogId: id });
 <span class="cstat-no" title="statement not covered" >      res.status(200).json({ likeCount });</span>
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >      res.status(500).json({ error: 'Error retrieving likes for blog' });</span>
@@ -178,7 +178,7 @@ export { LikeController };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-25T17:14:10.284Z
+                at 2024-02-27T08:27:48.702Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/50</span>
+                <span class='fraction'>25/50</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/50</span>
+                <span class='fraction'>25/50</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -202,13 +202,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,14 +219,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,12 +240,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -298,15 +298,15 @@ class MessageController {
     }
   }
 &nbsp;
-  public async <span class="fstat-no" title="function not covered" >createMessage(</span>req: IRequestMessage, res: Response) {
-    const response = <span class="cstat-no" title="statement not covered" >new CustomResponse(req, res);</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const { name, email ,text } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-      const validationResult = <span class="cstat-no" title="statement not covered" >validateMessage({ name, email, text });</span>
-<span class="cstat-no" title="statement not covered" >      if (!validationResult.error) {</span>
-        const newMessage = <span class="cstat-no" title="statement not covered" >MessageModel.createMessage({ name, email,text, createdAt: new Date() });</span>
-<span class="cstat-no" title="statement not covered" >        response.send&lt;typeof newMessage&gt;(newMessage, 'Message Created Successfully', 201);</span>
-      } else {
+  public async createMessage(req: IRequestMessage, res: Response) {
+    const response = new CustomResponse(req, res);
+    try {
+      const { name, email ,text } = req.body;
+      const validationResult = validateMessage({ name, email, text });
+      if (!validationResult.error) {
+        const newMessage = MessageModel.createMessage({ name, email,text, createdAt: new Date() });
+        response.send&lt;typeof newMessage&gt;(newMessage, 'Message Created Successfully', 201);
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >        response.send(null, validationResult.error.message, 400);</span>
       }
     } catch (error) {
@@ -315,19 +315,19 @@ class MessageController {
     }
   }
 &nbsp;
-  public async <span class="fstat-no" title="function not covered" >updateMessage(</span>req: Request, res: Response) {
-    const response = <span class="cstat-no" title="statement not covered" >new CustomResponse(req, res);</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const id = <span class="cstat-no" title="statement not covered" >parseInt(req.params.id);</span>
-      const newText = <span class="cstat-no" title="statement not covered" >req.body.text;</span>
-<span class="cstat-no" title="statement not covered" >      if (newText) {</span>
-        const updatedMessage = <span class="cstat-no" title="statement not covered" >MessageModel.updateMessage(id, newText);</span>
-<span class="cstat-no" title="statement not covered" >        if (updatedMessage) {</span>
-<span class="cstat-no" title="statement not covered" >          response.send&lt;typeof updatedMessage&gt;(updatedMessage, 'Message Updated Successfully', 200);</span>
-        } else {
+  public async updateMessage(req: Request, res: Response) {
+    const response = new CustomResponse(req, res);
+    try {
+      const id = parseInt(req.params.id);
+      const newText = req.body.text;
+      if (newText) {
+        const updatedMessage = MessageModel.updateMessage(id, newText);
+        if (updatedMessage) {
+          response.send&lt;typeof updatedMessage&gt;(updatedMessage, 'Message Updated Successfully', 200);
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >          response.send(null, 'Message not found', 404);</span>
         }
-      } else {
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >        response.send(null, 'Text is required', 400);</span>
       }
     } catch (error) {
@@ -336,14 +336,14 @@ class MessageController {
     }
   }
 &nbsp;
-  public async <span class="fstat-no" title="function not covered" >deleteMessage(</span>req: Request, res: Response) {
-    const response = <span class="cstat-no" title="statement not covered" >new CustomResponse(req, res);</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const id = <span class="cstat-no" title="statement not covered" >parseInt(req.params.id);</span>
-      const deleted = <span class="cstat-no" title="statement not covered" >MessageModel.deleteMessage(id);</span>
-<span class="cstat-no" title="statement not covered" >      if (deleted) {</span>
-<span class="cstat-no" title="statement not covered" >        response.send(null, 'Message Deleted Successfully', 204);</span>
-      } else {
+  public async deleteMessage(req: Request, res: Response) {
+    const response = new CustomResponse(req, res);
+    try {
+      const id = parseInt(req.params.id);
+      const deleted = MessageModel.deleteMessage(id);
+      if (deleted) {
+        response.send(null, 'Message Deleted Successfully', 204);
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >        response.send(null, 'Message not found', 404);</span>
       }
     } catch (error) {
@@ -361,7 +361,7 @@ export { MessageController };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-25T17:14:10.284Z
+                at 2024-02-27T08:27:48.702Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

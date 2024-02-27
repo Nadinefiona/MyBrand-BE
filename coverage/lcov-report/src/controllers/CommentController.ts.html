@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12% </span>
+                <span class="strong">68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/25</span>
+                <span class='fraction'>17/25</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12% </span>
+                <span class="strong">68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/25</span>
+                <span class='fraction'>17/25</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -130,45 +130,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,46 +190,46 @@ import Comment, { IComment } from '../models/comment';
 import { commentValidationSchema } from '../utils/commentValidation';
 &nbsp;
 class CommentController {
-    public async <span class="fstat-no" title="function not covered" >postComment(</span>req: Request, res: Response){
-<span class="cstat-no" title="statement not covered" >        try {</span>
-            const { error } = <span class="cstat-no" title="statement not covered" >commentValidationSchema.validate(req.body);</span>
-<span class="cstat-no" title="statement not covered" >            <span class="missing-if-branch" title="if path not taken" >I</span>if (error) {</span>
+    public async postComment(req: Request, res: Response){
+        try {
+            const { error } = commentValidationSchema.validate(req.body);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (error) {
 <span class="cstat-no" title="statement not covered" >                return res.status(400).json({ error: error.details[0].message });</span>
             }
 &nbsp;
-            const { name, email, comment } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-            const blogId = <span class="cstat-no" title="statement not covered" >req.params.id;</span>
+            const { name, email, comment } = req.body;
+            const blogId = req.params.id;
 &nbsp;
             // Assuming blogId exists in the database
 &nbsp;
-            const newComment: IComment = <span class="cstat-no" title="statement not covered" >new Comment({ </span>
+            const newComment: IComment = new Comment({ 
                 blogId: blogId, 
                 name: name as string, 
                 email: email as string,
                 comment: comment as string 
             });
-            const savedComment = <span class="cstat-no" title="statement not covered" >await newComment.save();</span>
+            const savedComment = await newComment.save();
 <span class="cstat-no" title="statement not covered" >            res.status(201).json({</span>
                 comment: savedComment,
                 message: 'Comment Posted Successfully'
             });
         } catch (error) {
-            const errorMessage = <span class="cstat-no" title="statement not covered" >error as string;</span>
-<span class="cstat-no" title="statement not covered" >            res.status(500).json({ error: errorMessage });</span>
+            const errorMessage = error as string;
+            res.status(500).json({ error: errorMessage });
         }
     }
        
-    public async <span class="fstat-no" title="function not covered" >getAllComments(</span>req: Request, res: Response) {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-            const blogId = <span class="cstat-no" title="statement not covered" >req.params.id;</span>
-            const comments = <span class="cstat-no" title="statement not covered" >await Comment.find({ blogId, hidden: false });</span>
+    public async getAllComments(req: Request, res: Response) {
+        try {
+            const blogId = req.params.id;
+            const comments = await Comment.find({ blogId, hidden: false });
 <span class="cstat-no" title="statement not covered" >            res.status(200).json({</span>
                 comments: comments,
                 message: 'Comments on blog Fetched Successfully'
             });
         } catch (error) {
-            const errorMessage = <span class="cstat-no" title="statement not covered" >error as string;</span>
-<span class="cstat-no" title="statement not covered" >            res.status(500).json({ error: errorMessage });</span>
+            const errorMessage = error as string;
+            res.status(500).json({ error: errorMessage });
         }
     }
     
@@ -253,7 +253,7 @@ export { CommentController };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-25T17:14:10.284Z
+                at 2024-02-27T08:27:48.702Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
