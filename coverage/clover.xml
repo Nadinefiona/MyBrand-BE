@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709022468865" clover="3.2.0">
-  <project timestamp="1709022468865" name="All files">
+<coverage generated="1709046260696" clover="3.2.0">
+  <project timestamp="1709046260697" name="All files">
     <metrics statements="316" coveredstatements="198" conditionals="33" coveredconditionals="8" methods="38" coveredmethods="22" elements="387" coveredelements="228" complexity="0" loc="316" ncloc="316" packages="8" files="22" classes="22"/>
     <package name="src">
       <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -26,12 +26,12 @@
       </file>
       <file name="swagger.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/swagger.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.Middleware">
@@ -351,25 +351,25 @@
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="415" count="2" type="stmt"/>
-        <line num="416" count="2" type="stmt"/>
-        <line num="417" count="2" type="stmt"/>
-        <line num="418" count="2" type="stmt"/>
         <line num="419" count="2" type="stmt"/>
+        <line num="420" count="2" type="stmt"/>
+        <line num="421" count="2" type="stmt"/>
+        <line num="422" count="2" type="stmt"/>
         <line num="423" count="2" type="stmt"/>
-        <line num="424" count="2" type="stmt"/>
-        <line num="425" count="2" type="stmt"/>
-        <line num="430" count="2" type="stmt"/>
-        <line num="431" count="2" type="stmt"/>
-        <line num="432" count="2" type="stmt"/>
-        <line num="437" count="2" type="stmt"/>
-        <line num="438" count="2" type="stmt"/>
-        <line num="439" count="2" type="stmt"/>
-        <line num="440" count="2" type="stmt"/>
+        <line num="427" count="2" type="stmt"/>
+        <line num="428" count="2" type="stmt"/>
+        <line num="429" count="2" type="stmt"/>
+        <line num="434" count="2" type="stmt"/>
+        <line num="435" count="2" type="stmt"/>
+        <line num="436" count="2" type="stmt"/>
         <line num="441" count="2" type="stmt"/>
-        <line num="446" count="2" type="stmt"/>
-        <line num="447" count="2" type="stmt"/>
+        <line num="442" count="2" type="stmt"/>
+        <line num="443" count="2" type="stmt"/>
+        <line num="444" count="2" type="stmt"/>
+        <line num="445" count="2" type="stmt"/>
+        <line num="450" count="2" type="stmt"/>
         <line num="451" count="2" type="stmt"/>
+        <line num="455" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.utils">

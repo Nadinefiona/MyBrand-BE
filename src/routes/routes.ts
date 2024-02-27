@@ -8,6 +8,410 @@ import isAuthenticated from '../Middleware/isAuthenticated';
 
 const route: IRouter = express.Router();
 
+/**
+ * @swagger
+ * /api/blogs:
+ *   get:
+ *     tags:
+ *       - Blog
+ *     summary: Get all blogs
+ *     responses:
+ *       200:
+ *         description: A list of blogs
+ */
+
+/**
+ * @swagger
+ * /api/blogs:
+ *   post:
+ *     tags:
+ *       - Blog
+ *     summary: Create a new blog
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               content:
+ *                 type: string
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *     responses:
+ *       200:
+ *         description: Blog created successfully
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{id}:
+ *   get:
+ *     tags:
+ *       - Blog
+ *     summary: Get a blog by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Blog details
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{id}:
+ *   patch:
+ *     tags:
+ *       - Blog
+ *     summary: Update a blog by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Blog updated successfully
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{id}:
+ *   delete:
+ *     tags:
+ *       - Blog
+ *     summary: Delete a blog by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Blog deleted successfully
+ */
+
+
+/**
+ * @swagger
+ * /api/blogs/{blogId}/comments:
+ *   post:
+ *     tags:
+ *       - Comment
+ *     summary: Add a comment to a blog
+ *     parameters:
+ *       - in: path
+ *         name: blogId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               content:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Comment added successfully
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{blogId}/comments:
+ *   get:
+ *     tags:
+ *       - Comment
+ *     summary: Get all comments for a blog
+ *     parameters:
+ *       - in: path
+ *         name: blogId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: A list of comments
+ */
+
+
+/**
+ * @swagger
+ * /api/blogs/{blogId}/comments/{commentId}:
+ *   put:
+ *     tags:
+ *       - Comment
+ *     summary: Hide a comment
+ *     parameters:
+ *       - in: path
+ *         name: blogId
+ *         required: true
+ *         schema:
+ *           type: string
+ *       - in: path
+ *         name: commentId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Comment hidden successfully
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{blogId}/like:
+ *   post:
+ *     tags:
+ *       - Like
+ *     summary: Like a blog
+ *     parameters:
+ *       - in: path
+ *         name: blogId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Blog liked successfully
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{blogId}/unlike:
+ *   delete:
+ *     tags:
+ *       - Like
+ *     summary: Unlike a blog
+ *     parameters:
+ *       - in: path
+ *         name: blogId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Blog unliked successfully
+ */
+
+/**
+ * @swagger
+ * /api/blogs/{blogId}/likes:
+ *   get:
+ *     tags:
+ *       - Like
+ *     summary: Get all likes for a blog
+ *     parameters:
+ *       - in: path
+ *         name: blogId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: A list of likes
+ */
+
+/**
+ * @swagger
+ * /api/messages:
+ *   get:
+ *     tags:
+ *       - Message
+ *     summary: Get all messages
+ *     responses:
+ *       200:
+ *         description: A list of messages
+ */
+
+
+/**
+ * @swagger
+ * /api/messages/{id}:
+ *   get:
+ *     tags:
+ *       - Message
+ *     summary: Get a message by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Message details
+ */
+
+
+/**
+ * @swagger
+ * /api/messages:
+ *   post:
+ *     tags:
+ *       - Message
+ *     summary: Create a new message
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               content:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Message created successfully
+ */
+
+
+/**
+ * @swagger
+ * /api/messages/{id}:
+ *   patch:
+ *     tags:
+ *       - Message
+ *     summary: Update a message by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               content:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Message updated successfully
+ */
+
+
+/**
+ * @swagger
+ * /api/messages/{id}:
+ *   delete:
+ *     tags:
+ *       - Message
+ *     summary: Delete a message by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Message deleted successfully
+ */
+
+
+/**
+ * @swagger
+ * /api/signup:
+ *   post:
+ *     tags:
+ *       - Auth
+ *     summary: Sign up a new user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               fullName:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: User created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 token:
+ *                   type: string
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                     username:
+ *                       type: string
+ */
+
+/**
+ * @swagger
+ * /api/signin:
+ *   post:
+ *     tags:
+ *       - Auth
+ *     summary: Sign in an existing user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: User signed in successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 token:
+ *                   type: string
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                     username:
+ *                       type: string
+ */
+
 
 
 //blog

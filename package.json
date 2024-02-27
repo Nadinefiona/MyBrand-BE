@@ -2,7 +2,7 @@
   "name": "mybrand-be",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "./dist/js/index.js",
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.5",
@@ -111,7 +111,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch --coverage --detectOpenHandles --verbose",
     "build": "tsc",
-    "start": "node dist/js/index.js",
+    "start": "node ./dist/js/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/js/index.js\""
   },
   "keywords": [],
