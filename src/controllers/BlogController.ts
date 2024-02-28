@@ -8,7 +8,7 @@ import UploadToCloud from "../helper/cloudinary";
 
 interface IRequestBlog extends Request {
   body: IBlog;
-  file?: Express.Multer.File; // Ensure req.file is optional
+  file?: Express.Multer.File; 
 }
 
 class BlogController {
