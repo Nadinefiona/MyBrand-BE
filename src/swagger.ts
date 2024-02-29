@@ -22,7 +22,7 @@ const swaggerOptions = {
         },
       },
     },
-    security: [{ BearerAuth: [] }], 
+    // security: [{ BearerAuth: [] }], 
   },
   apis: ['./src/routes/routes.ts'],
 };

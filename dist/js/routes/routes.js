@@ -29,6 +29,8 @@ const route = express_1.default.Router();
  *     tags:
  *       - Blog
  *     summary: Create a new blog
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -71,6 +73,8 @@ const route = express_1.default.Router();
  *     tags:
  *       - Blog
  *     summary: Update a blog by ID
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -99,6 +103,8 @@ const route = express_1.default.Router();
  *     tags:
  *       - Blog
  *     summary: Delete a blog by ID
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -159,6 +165,8 @@ const route = express_1.default.Router();
  *     tags:
  *       - Comment
  *     summary: Hide a comment
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: blogId
@@ -232,6 +240,8 @@ const route = express_1.default.Router();
  *     tags:
  *       - Message
  *     summary: Get all messages
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: A list of messages
@@ -243,6 +253,8 @@ const route = express_1.default.Router();
  *     tags:
  *       - Message
  *     summary: Get a message by ID
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -272,32 +284,6 @@ const route = express_1.default.Router();
  *     responses:
  *       200:
  *         description: Message created successfully
- */
-/**
- * @swagger
- * /api/messages/{id}:
- *   patch:
- *     tags:
- *       - Message
- *     summary: Update a message by ID
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               content:
- *                 type: string
- *     responses:
- *       200:
- *         description: Message updated successfully
  */
 /**
  * @swagger
@@ -408,7 +394,6 @@ route.get('/blogs/:id/likes', new LikeController_1.LikeController().getAllLikesF
 route.get('/messages', isAuthenticated_1.default, new MessageController_1.MessageController().getAllMessages);
 route.get('/messages/:id', isAuthenticated_1.default, new MessageController_1.MessageController().getMessageById);
 route.post('/messages', new MessageController_1.MessageController().createMessage);
-route.patch('/messages/:id', new MessageController_1.MessageController().updateMessage);
 route.delete('/messages/:id', new MessageController_1.MessageController().deleteMessage);
 //Signup/signin using jwt
 route.post('/signup', new authController_1.AuthController().signup);

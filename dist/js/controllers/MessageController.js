@@ -92,31 +92,6 @@ class MessageController {
             }
         });
     }
-    updateMessage(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = new response_1.default(req, res);
-            try {
-                const id = parseInt(req.params.id);
-                const newText = req.body.text;
-                if (newText) {
-                    const updatedMessage = MessageModel.updateMessage(id, newText);
-                    if (updatedMessage) {
-                        response.send(updatedMessage, 'Message Updated Successfully', 200);
-                    }
-                    else {
-                        response.send(null, 'Message not found', 404);
-                    }
-                }
-                else {
-                    response.send(null, 'Text is required', 400);
-                }
-            }
-            catch (error) {
-                const errorMessage = error;
-                response.send(null, errorMessage, 500);
-            }
-        });
-    }
     deleteMessage(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = new response_1.default(req, res);

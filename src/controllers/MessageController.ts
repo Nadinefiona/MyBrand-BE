@@ -56,26 +56,7 @@ class MessageController {
     }
   }
 
-  public async updateMessage(req: Request, res: Response) {
-    const response = new CustomResponse(req, res);
-    try {
-      const id = parseInt(req.params.id);
-      const newText = req.body.text;
-      if (newText) {
-        const updatedMessage = MessageModel.updateMessage(id, newText);
-        if (updatedMessage) {
-          response.send<typeof updatedMessage>(updatedMessage, 'Message Updated Successfully', 200);
-        } else {
-          response.send(null, 'Message not found', 404);
-        }
-      } else {
-        response.send(null, 'Text is required', 400);
-      }
-    } catch (error) {
-      const errorMessage = error as string;
-      response.send(null, errorMessage as string, 500);
-    }
-  }
+
 
   public async deleteMessage(req: Request, res: Response) {
     const response = new CustomResponse(req, res);

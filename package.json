@@ -108,7 +108,7 @@
     "vary": "^1.1.2"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage ",
     "test:watch": "jest --watch --coverage --detectOpenHandles --verbose",
     "build": "tsc",
     "start": "node ./dist/js/index.js",
