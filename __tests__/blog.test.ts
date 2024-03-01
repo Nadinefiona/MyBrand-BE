@@ -5,6 +5,7 @@ import app   from '../src/index';
 import fs from'fs'
 import path from 'path'
 import FormData from "form-data";
+import  { closeServer } from '../src/index'
 
 
 describe('BlogController', () => {
@@ -14,6 +15,7 @@ describe('BlogController', () => {
   
   afterAll(async () => {
     await mongoose.connection.close();
+    closeServer();
   },20000);
 
   it('should get all blogs', async () => {
@@ -122,6 +124,7 @@ describe('CommentController', () => {
   
   afterAll(async () => {
     await mongoose.connection.close();
+    closeServer();
   });
 
   it('should post a new comment', async () => {
@@ -164,6 +167,7 @@ describe('LikeController', () => {
   
   afterAll(async () => {
     await mongoose.connection.close();
+    closeServer();
   });
 
 
@@ -197,6 +201,7 @@ describe('MessageController', () => {
   
   afterAll(async () => {
     await mongoose.connection.close();
+    closeServer();
   });
 
   it('should create a new message', async () => {

@@ -108,7 +108,7 @@
     "vary": "^1.1.2"
   },
   "scripts": {
-    "test": "jest --coverage --watchAll --no-cache --detectOpenHandles --forceExit",
+    "test": "jest --coverage   --detectOpenHandles --forceExit",
     "build": "tsc",
     "start": "node ./dist/js/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/js/index.js\""

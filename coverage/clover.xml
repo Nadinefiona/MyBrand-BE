@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709297895355" clover="3.2.0">
-  <project timestamp="1709297895356" name="All files">
-    <metrics statements="303" coveredstatements="217" conditionals="29" coveredconditionals="12" methods="37" coveredmethods="28" elements="369" coveredelements="257" complexity="0" loc="303" ncloc="303" packages="8" files="22" classes="22"/>
+<coverage generated="1709299664893" clover="3.2.0">
+  <project timestamp="1709299664893" name="All files">
+    <metrics statements="305" coveredstatements="219" conditionals="29" coveredconditionals="12" methods="38" coveredmethods="29" elements="372" coveredelements="260" complexity="0" loc="305" ncloc="305" packages="8" files="22" classes="22"/>
     <package name="src">
-      <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="25" coveredstatements="25" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="index.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/index.ts">
-        <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -22,7 +22,9 @@
         <line num="25" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
       </file>
       <file name="swagger.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/swagger.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
