@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709288568238" clover="3.2.0">
-  <project timestamp="1709288568238" name="All files">
-    <metrics statements="303" coveredstatements="224" conditionals="29" coveredconditionals="12" methods="37" coveredmethods="29" elements="369" coveredelements="265" complexity="0" loc="303" ncloc="303" packages="8" files="22" classes="22"/>
+<coverage generated="1709294713545" clover="3.2.0">
+  <project timestamp="1709294713545" name="All files">
+    <metrics statements="303" coveredstatements="217" conditionals="29" coveredconditionals="12" methods="37" coveredmethods="28" elements="369" coveredelements="257" complexity="0" loc="303" ncloc="303" packages="8" files="22" classes="22"/>
     <package name="src">
       <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/index.ts">
@@ -57,13 +57,13 @@
         <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="165" coveredstatements="99" conditionals="18" coveredconditionals="6" methods="17" coveredmethods="14"/>
+      <metrics statements="165" coveredstatements="92" conditionals="18" coveredconditionals="6" methods="17" coveredmethods="13"/>
       <file name="BlogController.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/controllers/BlogController.ts">
         <metrics statements="51" coveredstatements="31" conditionals="5" coveredconditionals="2" methods="5" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
@@ -208,7 +208,7 @@
         <line num="78" count="1" type="stmt"/>
       </file>
       <file name="authController.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/controllers/authController.ts">
-        <metrics statements="34" coveredstatements="16" conditionals="6" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <metrics statements="34" coveredstatements="9" conditionals="6" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -226,11 +226,11 @@
         <line num="25" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="41" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
@@ -240,9 +240,9 @@
         <line num="50" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.helper">
