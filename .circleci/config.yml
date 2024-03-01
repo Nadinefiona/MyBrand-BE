@@ -1,27 +1,44 @@
 version: 2.1
-#orbs
-orbs:
-  node: circleci/node@4.1.0
-  coveralls: coveralls/coveralls@2.2.1
 
-workflows:
-  build:
-    jobs:
-      - build
+orbs:
+  coveralls: coveralls/coveralls@2.2.0
+  node: circleci/node@5.1.0
 
 jobs:
-  build:
-    docker:
-      - image: cimg/node:16.13.2
+  build-1:
+    executor: node/default
     steps:
-      - checkout
-      - run:
-          name: Set up Node.js
-          command: |
-            echo "##[group] Installing Node.js"
-            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-            echo "##[endgroup]"
-      - run: npm ci
-      - run: npm test
-      - coveralls/upload
+    - checkout
+    - node/install-packages
+    - run: npm run test 
+    - coveralls/upload:
+        parallel: true
+        flag_name: Test 1
+        verbose: true
+
+  build-2:
+    executor: node/default
+    steps:
+    - checkout
+    - node/install-packages
+    - run: npm run test 
+    - coveralls/upload:
+        parallel: true
+        flag_name: Test 2
+        verbose: true
+
+  done:
+    executor: node/default
+
+    steps:
+    - coveralls/upload:
+        parallel_finished: true
+        carryforward: "Test 1,Test 2"
+
+workflows:
+  test_parallel_then_upload:
+    jobs:
+    - build-1
+    - build-2
+    - done:
+        requires: [ build-1, build-2 ]
