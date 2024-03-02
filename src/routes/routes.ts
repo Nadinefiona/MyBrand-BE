@@ -139,7 +139,11 @@ const route: IRouter = express.Router();
  *           schema:
  *             type: object
  *             properties:
- *               content:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               comment:
  *                 type: string
  *     responses:
  *       200:
@@ -294,7 +298,11 @@ const route: IRouter = express.Router();
  *           schema:
  *             type: object
  *             properties:
- *               content:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               text:
  *                 type: string
  *     responses:
  *       200:
