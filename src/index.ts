@@ -18,24 +18,7 @@ app.use('/api-docs', swaggerUiMiddleware, swaggerUiSetup);
 
 
 
-const corsOpts = {
-  origin: '*',
-  
-  methods: [
-  'GET',
-  'POST',
-  'DELETE',
-  'PATCH'
-  ],
-  
-  allowedHeaders: [
-  'Content-Type',
-  'Authorization',
-  ],
-  };
-  
-
-app.use(cors(corsOpts));
+app.use(cors())
 
 
 app.use(express.json());
