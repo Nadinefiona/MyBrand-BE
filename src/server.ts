@@ -1,8 +1,8 @@
 
 import express ,{Express, Request, Response} from 'express';
 import dotenv from 'dotenv';
-import databaseConnection from './src/config/db';
-import app from './src/index';
+import databaseConnection from './config/db';
+import app from './index';
 
 dotenv.config();
 
