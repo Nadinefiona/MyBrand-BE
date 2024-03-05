@@ -5,7 +5,7 @@ import app   from '../src/index';
 import fs from'fs'
 import path from 'path'
 import FormData from "form-data";
-import  { closeServer } from '../src/index'
+import  { closeServer } from '../server'
 
 
 describe('BlogController', () => {

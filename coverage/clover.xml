@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709299664893" clover="3.2.0">
-  <project timestamp="1709299664893" name="All files">
-    <metrics statements="305" coveredstatements="219" conditionals="29" coveredconditionals="12" methods="38" coveredmethods="29" elements="372" coveredelements="260" complexity="0" loc="305" ncloc="305" packages="8" files="22" classes="22"/>
-    <package name="src">
-      <metrics statements="25" coveredstatements="25" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+<coverage generated="1709636641494" clover="3.2.0">
+  <project timestamp="1709636641494" name="All files">
+    <metrics statements="308" coveredstatements="222" conditionals="29" coveredconditionals="12" methods="38" coveredmethods="29" elements="375" coveredelements="263" complexity="0" loc="308" ncloc="308" packages="9" files="23" classes="23"/>
+    <package name="MyBrand-BE">
+      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="server.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/server.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="MyBrand-BE.src">
+      <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/index.ts">
-        <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
       </file>
       <file name="swagger.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/swagger.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -36,7 +45,7 @@
         <line num="33" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.Middleware">
+    <package name="MyBrand-BE.src.Middleware">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="isAuthenticated.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/Middleware/isAuthenticated.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -46,7 +55,7 @@
         <line num="9" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.config">
+    <package name="MyBrand-BE.src.config">
       <metrics statements="12" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="db.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/config/db.ts">
         <metrics statements="12" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -64,7 +73,7 @@
         <line num="19" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.controllers">
+    <package name="MyBrand-BE.src.controllers">
       <metrics statements="165" coveredstatements="92" conditionals="18" coveredconditionals="6" methods="17" coveredmethods="13"/>
       <file name="BlogController.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/controllers/BlogController.ts">
         <metrics statements="51" coveredstatements="31" conditionals="5" coveredconditionals="2" methods="5" coveredmethods="4"/>
@@ -247,7 +256,7 @@
         <line num="65" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.helper">
+    <package name="MyBrand-BE.src.helper">
       <metrics statements="21" coveredstatements="17" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <file name="cloudinary.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/helper/cloudinary.ts">
         <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -277,7 +286,7 @@
         <line num="22" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.models">
+    <package name="MyBrand-BE.src.models">
       <metrics statements="34" coveredstatements="28" conditionals="1" coveredconditionals="0" methods="9" coveredmethods="6"/>
       <file name="Blog.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/models/Blog.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -329,7 +338,7 @@
         <line num="42" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.routes">
+    <package name="MyBrand-BE.src.routes">
       <metrics statements="26" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="routes.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/routes/routes.ts">
         <metrics statements="26" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -341,27 +350,27 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="407" count="1" type="stmt"/>
-        <line num="408" count="1" type="stmt"/>
-        <line num="409" count="1" type="stmt"/>
-        <line num="410" count="1" type="stmt"/>
-        <line num="411" count="1" type="stmt"/>
         <line num="415" count="1" type="stmt"/>
         <line num="416" count="1" type="stmt"/>
         <line num="417" count="1" type="stmt"/>
-        <line num="422" count="1" type="stmt"/>
+        <line num="418" count="1" type="stmt"/>
+        <line num="419" count="1" type="stmt"/>
         <line num="423" count="1" type="stmt"/>
         <line num="424" count="1" type="stmt"/>
-        <line num="429" count="1" type="stmt"/>
+        <line num="425" count="1" type="stmt"/>
         <line num="430" count="1" type="stmt"/>
         <line num="431" count="1" type="stmt"/>
         <line num="432" count="1" type="stmt"/>
         <line num="437" count="1" type="stmt"/>
         <line num="438" count="1" type="stmt"/>
-        <line num="442" count="1" type="stmt"/>
+        <line num="439" count="1" type="stmt"/>
+        <line num="440" count="1" type="stmt"/>
+        <line num="445" count="1" type="stmt"/>
+        <line num="446" count="1" type="stmt"/>
+        <line num="450" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.utils">
+    <package name="MyBrand-BE.src.utils">
       <metrics statements="18" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="authValidation.ts" path="/Users/nadinefiona/Downloads/MyBrand-BE/src/utils/authValidation.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
