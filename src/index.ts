@@ -14,11 +14,9 @@ const app: Express = express();
 
 databaseConnection();
 
-app.use('/api-docs', swaggerUiMiddleware, swaggerUiSetup);
-
-
-
 app.use(cors())
+
+app.use('/api-docs', swaggerUiMiddleware, swaggerUiSetup);
 
 
 app.use(express.json());
