@@ -3,6 +3,7 @@ import CustomResponse  from './utils/response';
 import router  from './routes/routes';
 import dotenv from 'dotenv';
 import upload from './helper/multer';
+import cors from 'cors';
 import { swaggerUiMiddleware, swaggerUiSetup } from './swagger';
 
 
@@ -14,6 +15,27 @@ const app: Express = express();
 databaseConnection();
 
 app.use('/api-docs', swaggerUiMiddleware, swaggerUiSetup);
+
+
+
+const corsOpts = {
+  origin: '*',
+  
+  methods: [
+  'GET',
+  'POST',
+  'DELETE',
+  'PATCH'
+  ],
+  
+  allowedHeaders: [
+  'Content-Type',
+  'Authorization',
+  ],
+  };
+  
+
+app.use(cors(corsOpts));
 
 
 app.use(express.json());

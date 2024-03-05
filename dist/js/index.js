@@ -8,12 +8,27 @@ const express_1 = __importDefault(require("express"));
 const routes_1 = __importDefault(require("./routes/routes"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const multer_1 = __importDefault(require("./helper/multer"));
+const cors_1 = __importDefault(require("cors"));
 const swagger_1 = require("./swagger");
 dotenv_1.default.config();
 const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
 (0, db_1.default)();
 app.use('/api-docs', swagger_1.swaggerUiMiddleware, swagger_1.swaggerUiSetup);
+const corsOpts = {
+    origin: '*',
+    methods: [
+        'GET',
+        'POST',
+        'DELETE',
+        'PATCH'
+    ],
+    allowedHeaders: [
+        'Content-Type',
+        'Authorization',
+    ],
+};
+app.use((0, cors_1.default)(corsOpts));
 app.use(express_1.default.json());
 app.use(multer_1.default.single('image'));
 app.use('/api', routes_1.default);
